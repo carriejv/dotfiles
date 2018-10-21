@@ -1,0 +1,86 @@
+-- carriejv conky config
+-- github.com/carriejv/dotfiles
+-- Inspired by Reddit user viral_94 (https://www.reddit.com/r/Conkyporn/comments/9m3sq3/first_time_manually_configuring_conky_by_myself_i/)
+
+conky.config = {
+   background = false,
+   update_interval = 1,
+
+   double_buffer = true,
+   no_buffers = true,
+   text_buffer_size = 2048,
+
+   gap_x = 30,
+   gap_y = 0,
+   minimum_width = 200, minimum_height = 200,
+   maximum_width = 500,
+   own_window = true,
+   own_window_type = 'override',
+
+   own_window_argb_visual = true,
+   own_window_argb_value = 85,
+   own_window_transparent = false,
+
+   own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+   border_inner_margin = 10,
+   border_outer_margin = 20,
+
+   alignment = 'top_right',
+
+   draw_shades = true,
+   draw_outline = false,
+   draw_borders = false,
+   draw_graph_borders = false,
+
+   override_utf8_locale = true,
+   use_xft = true,
+   font = 'Open Sans Light:normal:size=10',
+   xftalpha = 0.5,
+   uppercase = true,
+
+   -- Defining colors
+   default_color = '#F9F9FA'
+
+};
+
+conky.text = [[
+$hr
+${font Open Sans Light:size=50}${time %H:%M:%S}${font}
+${voffset 5}${color}${font Open Sans Light:size=20}$alignr${time %A}${font}${voffset -5}
+${voffset 5}${font Open Sans Light:size=20}$alignr${time %B} ${time %e}${font}${voffset -5}
+$hr
+${color}CPU
+
+${color grey}CPU1: $color${cpu cpu0}%${goto 160}${color grey}CPU2: $color${cpu cpu1}%
+${color grey}CPU3: $color${cpu cpu2}%${goto 160}${color grey}CPU4: $color${cpu cpu3}%
+
+${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+			$color${top name 1}$alignr${color grey}${top cpu 1}%
+			$color${top name 2}$alignr${color grey}${top cpu 2}%
+			$color${top name 3}$alignr${color grey}${top cpu 3}%
+			$color${top name 4}$alignr${color grey}${top cpu 4}%
+			$color${top name 5}$alignr${color grey}${top cpu 5}%
+$hr
+${color}Memory
+
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}Frequency (MHz):$color $freq
+${color grey}Processes:$color $processes
+			$color${top_mem name 1}$alignr${color grey}${top_mem mem_res 1}
+			$color${top_mem name 2}$alignr${color grey}${top mem_res 2}
+			$color${top_mem name 3}$alignr${color grey}${top mem_res 3}
+			$color${top_mem name 4}$alignr${color grey}${top mem_res 4}
+			$color${top_mem name 5}$alignr${color grey}${top mem_res 5}
+$hr
+${color}Disk I/O
+
+${color}SSD
+${color grey}Read:$color ${diskio_read /dev/nvme0n1}${goto 160}${color grey}Write:$color ${diskio_write /dev/nvme0n1}
+${color}HDD
+${color grey}Read:$color ${diskio_read /dev/disk/by-label/WDBlue}${goto 160}${color grey}Write:$color ${diskio_write /dev/sda}
+$hr
+${color}Network
+
+Up:$color ${upspeed enp0s31f6}${goto 160}${color grey} Down:$color ${downspeed enp0s31f6}
+]];
