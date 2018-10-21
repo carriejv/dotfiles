@@ -16,7 +16,7 @@ set $mod Mod1
 set $sec Mod4
 
 # Default applications
-set $nsid $nsid
+set $nsid --no-startup-id
 set $launcher "rofi -show drun -modi drun,run,ssh"
 set $switcher "rofi -show window"
 set $term sakura
