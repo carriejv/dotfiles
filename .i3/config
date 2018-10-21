@@ -349,7 +349,7 @@ bindsym $mod+Shift+Print --release exec $nsid i3-scrot -s
 bindsym $mod+F5 restart
 bindsym $mod+Shift+F5 --release exec pkill $nsid $compositor && exec $nsid $compositor
 bindsym $mod+F6 --release exec killall $notify; exec notify-send 'Restarted!'
-bindsym $mod+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky'
+bindsym $mod+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky
 bindsym $mod+Ctrl+x --release exec $nsid xkill
 
 # Change borders
@@ -511,7 +511,7 @@ bindsym $sec+Shift+Print --release exec $nsid i3-scrot -s
 bindsym $sec+F5 restart
 bindsym $sec+Shift+F5 --release exec pkill $nsid $compositor && exec $nsid $compositor
 bindsym $sec+F6 --release exec killall $notify; exec notify-send 'Restarted!'
-bindsym $sec+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky'
+bindsym $sec+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky
 bindsym $sec+Ctrl+x --release exec $nsid xkill
 
 # Change borders
