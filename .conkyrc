@@ -49,6 +49,11 @@ ${font Open Sans Light:size=50}${time %H:%M:%S}${font}
 ${voffset 5}${color}${font Open Sans Light:size=20}$alignr${time %A}${font}${voffset -5}
 ${voffset 5}${font Open Sans Light:size=20}$alignr${time %B} ${time %e}${font}${voffset -5}
 $hr
+${color}${execi 21600 lsb_release -d | cut -f 2} | ${execi 21600 lsb_release -c | cut -f 2}
+
+${color grey}${execi 21600 lsb_release -r | cut -f 2}
+${color grey}${kernel}
+$hr
 ${color}CPU
 
 ${color grey}CPU1: $color${cpu cpu0}%${goto 160}${color grey}CPU2: $color${cpu cpu1}%
