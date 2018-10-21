@@ -160,9 +160,10 @@ mode "$mode_gaps_outer" {
 ################################################################################################
 
 exec $nsid /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec $nsid nitrogen --restore; sleep 1; $compositor -b
+exec $nsid nitrogen --restore
+exec $nsid $compositor
 # exec $nsid pulseaudio
-exec $nsid pasystray
+exec $nsid pasystray --always-notify
 exec $nsid ckb-next -b
 exec $nsid nm-applet
 exec $nsid xfce4-power-manager
@@ -346,7 +347,7 @@ bindsym $mod+Shift+Print --release exec $nsid i3-scrot -s
 
 # Restart desktop components
 bindsym $mod+F5 restart
-bindsym $mod+Shift+F5 --release exec pkill $nsid $compositor &&  exec $nsid $compositor -b
+bindsym $mod+Shift+F5 --release exec pkill $nsid $compositor && exec $nsid $compositor
 bindsym $mod+F6 --release exec killall $notify; exec notify-send 'Restarted!'
 bindsym $mod+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky'
 bindsym $mod+Ctrl+x --release exec $nsid xkill
@@ -508,7 +509,7 @@ bindsym $sec+Shift+Print --release exec $nsid i3-scrot -s
 
 # Restart desktop components
 bindsym $sec+F5 restart
-bindsym $sec+Shift+F5 --release exec pkill $nsid $compositor &&  exec $nsid $compositor -b
+bindsym $sec+Shift+F5 --release exec pkill $nsid $compositor && exec $nsid $compositor
 bindsym $sec+F6 --release exec killall $notify; exec notify-send 'Restarted!'
 bindsym $sec+Shift+F6 --release exec $nsid pkill conky && exec $nsid conky'
 bindsym $sec+Ctrl+x --release exec $nsid xkill
@@ -621,6 +622,11 @@ bar {
 bindsym $mod+z bar mode dock
 bindsym $mod+Shift+z bar mode invisible
 
+################################################################################################
+#                                                                                              #
+# Startup Workspace                                                                            #
+#                                                                                              #
+################################################################################################
 
-
-
+for_window [class="_startup-terminal_"] floating enable, move absolute position 25 25, resize set 680 840
+exec $nsid $term --class=_startup-terminal_ -e 'sh -c "cmatrix | lolcat; clear; /bin/zsh"'
