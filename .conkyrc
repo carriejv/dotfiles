@@ -56,8 +56,10 @@ ${color grey}${kernel}
 $hr
 ${color}CPU
 
-${color grey}CPU1: $color${cpu cpu0}%${goto 160}${color grey}CPU2: $color${cpu cpu1}%
-${color grey}CPU3: $color${cpu cpu2}%${goto 160}${color grey}CPU4: $color${cpu cpu3}%
+${color grey}CPU1: $color${cpu cpu0}%${goto 160}${color grey}CPU5: $color${cpu cpu4}%
+${color grey}CPU2: $color${cpu cpu1}%${goto 160}${color grey}CPU6: $color${cpu cpu5}%
+${color grey}CPU3: $color${cpu cpu2}%${goto 160}${color grey}CPU7: $color${cpu cpu6}%
+${color grey}CPU4: $color${cpu cpu3}%${goto 160}${color grey}CPU8: $color${cpu cpu7}%
 
 ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 			$color${top name 1}$alignr${color grey}${top cpu 1}%
