@@ -20,7 +20,7 @@ set $nsid --no-startup-id
 set $launcher "rofi -show drun -modi drun,run,ssh"
 set $switcher "rofi -show window"
 set $term sakura
-set $browser firefox-developer-edition
+set $browser /opt/vivaldi/vivaldi-bin
 set $fileman nemo
 set $compositor compton
 set $notify dunst
