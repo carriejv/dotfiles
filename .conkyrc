@@ -61,7 +61,7 @@ ${color grey}CPU2: $color${cpu cpu1}%${goto 160}${color grey}CPU6: $color${cpu c
 ${color grey}CPU3: $color${cpu cpu2}%${goto 160}${color grey}CPU7: $color${cpu cpu6}%
 ${color grey}CPU4: $color${cpu cpu3}%${goto 160}${color grey}CPU8: $color${cpu cpu7}%
 
-${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${color grey}CPU Usage:$color $cpu% ${voffset 2}${cpubar 8}${voffset -2}
 			$color${top name 1}$alignr${color grey}${top cpu 1}%
 			$color${top name 2}$alignr${color grey}${top cpu 2}%
 			$color${top name 3}$alignr${color grey}${top cpu 3}%
@@ -70,8 +70,8 @@ ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 $hr
 ${color}Memory
 
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
-${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${voffset 2}${membar 8}${voffset -2}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${voffset 2}${swapbar 8}${voffset -2}
 ${color grey}Frequency (MHz):$color $freq
 ${color grey}Processes:$color $processes
 			$color${top_mem name 1}$alignr${color grey}${top_mem mem_res 1}

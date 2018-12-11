@@ -276,8 +276,8 @@ bindsym $mod+h split h;exec notify-send 'Tile Horizontally'
 bindsym $mod+v split v;exec notify-send 'Tile Vertically'
 
 # Navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
 
 # Workspace back and forth (with/without active container)
 bindsym $mod+b workspace back_and_forth
@@ -382,9 +382,6 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Lock screen
 bindsym $mod+9 exec $nsid blurlock
 
@@ -442,8 +439,8 @@ bindsym $sec+h split h;exec notify-send 'Tile Horizontally'
 bindsym $sec+v split v;exec notify-send 'Tile Vertically'
 
 # Navigate workspaces next / previous
-bindsym $sec+Ctrl+Right workspace next
-bindsym $sec+Ctrl+Left workspace prev
+bindsym $sec+Ctrl+Right move workspace to output right
+bindsym $sec+Ctrl+Left move workspace to output left
 
 # Workspace back and forth (with/without active container)
 bindsym $sec+b workspace back_and_forth
@@ -547,9 +544,6 @@ bindsym $sec+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $sec+minus scratchpad show
-
-# Exit i3 (logs you out of your X session)
-bindsym $sec+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock screen
 bindsym $sec+9 exec $nsid blurlock

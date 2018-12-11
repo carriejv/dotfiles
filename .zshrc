@@ -98,3 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 /bin/neofetch
+
+# Local bin to PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:/home/carrie/.gem/ruby/2.5.0/bin:$HOME/.rvm/bin"
