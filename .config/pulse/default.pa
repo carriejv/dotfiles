@@ -1,0 +1,9 @@
+.include /etc/pulse/default.pa
+
+load-module module-bluetooth-discover
+load-module module-null-sink sink_name=V-Audio sink_properties=device.description=V-Audio
+load-module module-null-sink sink_name=V-Comms sink_properties=device.description=V-Comms
+load-module module-null-sink sink_name=V-Music sink_properties=device.description=V-Music
+load-module module-loopback source=V-Audio.monitor sink=alsa_output.pci-0000_00_1f.3.analog-stereo
+load-module module-loopback source=V-Comms.monitor sink=alsa_output.pci-0000_00_1f.3.analog-stereo
+load-module module-loopback source=V-Music.monitor sink=alsa_output.pci-0000_00_1f.3.analog-stereo
