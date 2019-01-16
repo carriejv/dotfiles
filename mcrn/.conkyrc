@@ -1,0 +1,35 @@
+-- carriejv conky config
+-- github.com/carriejv/dotfiles/
+
+conky.config = {
+   background = false,
+   update_interval = 1,
+   update_interval_on_battery = 5,
+
+   double_buffer = true,
+   no_buffers = true,
+   text_buffer_size = 2048,
+
+   gap_x = 0,
+   gap_y = 0,
+   minimum_width = 1920, minimum_height = 1080,
+   maximum_width = 1920,
+
+   own_window = true,
+   own_window_type = 'override',
+   own_window_argb_visual = true,
+   own_window_transparent = true,
+   own_window_hints = 'below,undecorated,skip_taskbar,skip_pager',
+
+   alignment = 'top_left',
+
+   draw_shades = true,
+   override_utf8_locale = true,
+   format_human_readable = true,
+
+   lua_load = '~/.conky/conky-mcrn.lua',
+   lua_draw_hook_pre = 'conky_main',
+};
+
+conky.text = [[
+]];
